@@ -68,8 +68,9 @@ has_sword(X)
 ability_to_get_treasure(maria, X)
 
 Может ли Иван одежрать победу над монстром orc без бонусов?
-ability_to_win_the_monster_no_bonuses(ivan,org)
+ability_to_win_the_monster_no_bonuses(ivan,orc)
 
 Может ли Иван одежрать победу над монстром orc c бонусов?
-ability_to_win_the_monster_with_bonuses(ivan,org)
+ability_to_win_the_monster_with_bonuses(ivan,orc)
+  
   
