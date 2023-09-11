@@ -1,1 +1,75 @@
+~ Простые запросы к базе знаний для поиска фактов ~
 
+
+Существует ли в игре класс клириков?
+class_in_game(cleric)
+
+Иван сейчас в игре?
+player_now(ivan)
+
+Игрок Иван - человек?
+player_race(ivan, people)
+
+Сокровище шлем принадлежиит Олегу?
+treasure_player(helmet, oleg)
+
+Монстр гоблин 8 уровня?
+monster_level(amazon, 8)
+
+
+~ Запросы, использующие логические операторы (и, или, не) для формулирования сложных условий ~
+
+
+Вывести список сокровищ, которые могу принадлежать Маше
+player_bonus(X, Race),player_race(maria, Race)
+
+Есть ли в игре монстр demon или orgic?
+monster_in_game(demon);monster_in_game(orgic)
+
+Игрок Олег не принадлежит к людям? 
+not(player_race(oleg, people)).
+
+Какое сокровища дают 2 бонуса и могут принадлежать хафлингам?
+bonus_in_treasure(X, 2),player_bonus(X, halfling).
+
+Вывести список людей, которые имеют любые сокровища
+player_race(X, people),treasure_player(_, X).
+
+
+~ Запросы, использующие переменные для поиска объектов с определенными характеристиками ~
+
+
+Какие расы могут иметь Шлем?
+player_bonus(helmet, Raca).
+
+Какой уровень монстра amazon?
+monster_level(amazon, X).
+
+Какие сокровище есть у Ивана и Олега?
+treasure_player(X, ivan);treasure_player(X, oleg).
+
+Есть ли у кого-то из игроков сокровище blister?
+treasure_player(blister, _).
+
+
+~ Запросы, которые требуют выполнения правил для получения результата ~
+
+
+Кто-нибудь является волшебником?
+is_mag(_)
+
+Лариса принадлежит к расе людей?
+is_people(larisa)
+
+У кого есть сокровище big_sword?
+has_sword(X)
+
+Какие сокровища может получить Мария?
+ability_to_get_treasure(maria, X)
+
+Может ли Иван одежрать победу над монстром orc без бонусов?
+ability_to_win_the_monster_no_bonuses(ivan,org)
+
+Может ли Иван одежрать победу над монстром orc c бонусов?
+ability_to_win_the_monster_with_bonuses(ivan,org)
+  
