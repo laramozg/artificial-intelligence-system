@@ -19,7 +19,7 @@ monster_in_game(goblin).
 monster_in_game(bullrog).
 monster_in_game(rygachu).
 monster_in_game(vampire).
-monster_in_game(ork).
+monster_in_game(orc).
 monster_in_game(demon).
 monster_in_game(agent).
 
@@ -49,7 +49,7 @@ bonus_in_treasure(cloak_furbidite, 2).
 bonus_in_treasure(archer, 4).
 bonus_in_treasure(helmet, 2).
 
-%Факты о том, что человек является игроком
+%Факты о том, что человек является игроком 
 player_now(larisa).
 player_now(ivan).
 player_now(oleg).
@@ -94,7 +94,7 @@ treasure_player(blister, larisa).
 treasure_player(helmet, ivan).
 
 %ПРАВИЛА
-
+	
 %Правило о принадлежности к волшебникам
 is_mag(Name):-
     player_now(Name),
@@ -123,7 +123,7 @@ ability_to_win_the_monster_no_bonuses(Name,Monster) :-
     monster_in_game(Monster),
     player_level(Name, X),
     monster_level(Monster, Y),
-    (  X < Y -> true ;  false).
+    (  X > Y -> true ;  false).
 
 %Правило, проверяющее возможность одержать победу над монстром с бонусами
 ability_to_win_the_monster_with_bonuses(Name,Monster) :-
@@ -133,4 +133,7 @@ ability_to_win_the_monster_with_bonuses(Name,Monster) :-
     bonus_in_treasure(Treasure,Z),
     player_level(Name, X),
     monster_level(Monster, Y),
-    (  X + Z< Y -> true ;  false).
+    (  X + Z > Y -> true ;  false).
+
+
+  
