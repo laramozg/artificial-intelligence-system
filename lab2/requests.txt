@@ -30,17 +30,11 @@ treasure_player some (player_race value people)
 
 
 
-
-Запросы с использованием правил
-
 Герои расы человек
-is_people value true
+player_race value people
 
-Герои класса волшебник
-is_mag value true
-
-Наличии сокровища blister у игроков
-is_has_blister value true
+Герои класса слерик
+player_class value cleric
 
 Монстры, которые могут одолеть всех людей
 is_monster__win_all value true
