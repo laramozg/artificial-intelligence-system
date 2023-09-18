@@ -1,0 +1,46 @@
+Запросы с использованием фактов и отношений
+
+Существует ли классы в игре?
+class_in_game value true
+
+Игроки в игре?
+hero_on_field value true
+
+Монстр с уровнем 8?
+monster_level value 8
+
+Расы в игре?
+race_in_game value true
+
+Сокровище принадлежащее Олегу?
+treasure_player value oleg
+
+
+Какое сокровища дают 2 бонуса и принадлежат хафлингам?
+(bonus_in_treasure value 2) and (player_bonus value halfling)
+
+Герои с уровнем 9 или классом warrior?
+(player_level value 9) or (player_class value warrior)
+
+Сокровища, которые принадлежат игрокам с расой человек
+treasure_player some (player_race value people)
+
+Герой с уровнем 2 и расой эльф и классом слерик?
+(player_level value 2) and (player_race value elf) and (player_class value cleric)
+
+
+
+
+Запросы с использованием правил
+
+Герои расы человек
+is_people value true
+
+Герои класса волшебник
+is_mag value true
+
+Наличии сокровища blister у игроков
+is_has_blister value true
+
+Монстры, которые могут одолеть всех людей
+is_monster__win_all value true
